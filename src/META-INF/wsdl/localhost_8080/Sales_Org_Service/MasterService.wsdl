@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="MasterServiceImpService" targetNamespace="http://imp.service.wb.sales.com/" xmlns:ns1="http://service.wb.sales.com/" xmlns:ns2="http://cxf.apache.org/bindings/xformat" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://imp.service.wb.sales.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:import location="http://localhost:8080/Sales_Org_Service/MasterService?wsdl=MasterService.wsdl" namespace="http://service.wb.sales.com/">
+    </wsdl:import>
+  <wsdl:binding name="MasterServiceImpServiceSoapBinding" type="ns1:MasterService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getCompanyDetail">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getCompanyDetail">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getCompanyDetailResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateArea">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="updateArea">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateAreaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createEmployee">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="createEmployee">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="createEmployeeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="blockItem">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="blockItem">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="blockItemResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="blockEmployee">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="blockEmployee">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="blockEmployeeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createBillBook">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="createBillBook">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="createBillBookResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRetailerDtl">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getRetailerDtl">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getRetailerDtlResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createArea">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="createArea">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="createAreaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEmployee">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="updateEmployee">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateEmployeeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="blockRetailer">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="blockRetailer">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="blockRetailerResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRetailer">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="createRetailer">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="createRetailerResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRetailer">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="updateRetailer">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateRetailerResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createItem">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="createItem">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="createItemResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAreaMasterDtl">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getAreaMasterDtl">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAreaMasterDtlResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBillbook">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="updateBillbook">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateBillbookResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPaymentModes">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getAllPaymentModes">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllPaymentModesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateItem">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="updateItem">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateItemResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllItemMasterDtl">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getAllItemMasterDtl">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllItemMasterDtlResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllBillBookdtl">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getAllBillBookdtl">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllBillBookdtlResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllEmployee">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getAllEmployee">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllEmployeeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MasterServiceImpService">
+    <wsdl:port binding="tns:MasterServiceImpServiceSoapBinding" name="MasterServiceImpPort">
+      <soap:address location="http://localhost:8080/Sales_Org_Service/MasterService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

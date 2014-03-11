@@ -1,0 +1,625 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="MasterService" targetNamespace="http://service.wb.sales.com/" xmlns:ns1="http://service.wb.sales.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://service.wb.sales.com/" version="1.0" xmlns:tns="http://service.wb.sales.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="blockEmployee" type="tns:blockEmployee" />
+<xs:element name="blockEmployeeResponse" type="tns:blockEmployeeResponse" />
+<xs:element name="blockItem" type="tns:blockItem" />
+<xs:element name="blockItemResponse" type="tns:blockItemResponse" />
+<xs:element name="blockRetailer" type="tns:blockRetailer" />
+<xs:element name="blockRetailerResponse" type="tns:blockRetailerResponse" />
+<xs:element name="createArea" type="tns:createArea" />
+<xs:element name="createAreaResponse" type="tns:createAreaResponse" />
+<xs:element name="createBillBook" type="tns:createBillBook" />
+<xs:element name="createBillBookResponse" type="tns:createBillBookResponse" />
+<xs:element name="createEmployee" type="tns:createEmployee" />
+<xs:element name="createEmployeeResponse" type="tns:createEmployeeResponse" />
+<xs:element name="createItem" type="tns:createItem" />
+<xs:element name="createItemResponse" type="tns:createItemResponse" />
+<xs:element name="createRetailer" type="tns:createRetailer" />
+<xs:element name="createRetailerResponse" type="tns:createRetailerResponse" />
+<xs:element name="getAllBillBookdtl" type="tns:getAllBillBookdtl" />
+<xs:element name="getAllBillBookdtlResponse" type="tns:getAllBillBookdtlResponse" />
+<xs:element name="getAllEmployee" type="tns:getAllEmployee" />
+<xs:element name="getAllEmployeeResponse" type="tns:getAllEmployeeResponse" />
+<xs:element name="getAllItemMasterDtl" type="tns:getAllItemMasterDtl" />
+<xs:element name="getAllItemMasterDtlResponse" type="tns:getAllItemMasterDtlResponse" />
+<xs:element name="getAllPaymentModes" type="tns:getAllPaymentModes" />
+<xs:element name="getAllPaymentModesResponse" type="tns:getAllPaymentModesResponse" />
+<xs:element name="getAreaMasterDtl" type="tns:getAreaMasterDtl" />
+<xs:element name="getAreaMasterDtlResponse" type="tns:getAreaMasterDtlResponse" />
+<xs:element name="getCompanyDetail" type="tns:getCompanyDetail" />
+<xs:element name="getCompanyDetailResponse" type="tns:getCompanyDetailResponse" />
+<xs:element name="getRetailerDtl" type="tns:getRetailerDtl" />
+<xs:element name="getRetailerDtlResponse" type="tns:getRetailerDtlResponse" />
+<xs:element name="updateArea" type="tns:updateArea" />
+<xs:element name="updateAreaResponse" type="tns:updateAreaResponse" />
+<xs:element name="updateBillbook" type="tns:updateBillbook" />
+<xs:element name="updateBillbookResponse" type="tns:updateBillbookResponse" />
+<xs:element name="updateEmployee" type="tns:updateEmployee" />
+<xs:element name="updateEmployeeResponse" type="tns:updateEmployeeResponse" />
+<xs:element name="updateItem" type="tns:updateItem" />
+<xs:element name="updateItemResponse" type="tns:updateItemResponse" />
+<xs:element name="updateRetailer" type="tns:updateRetailer" />
+<xs:element name="updateRetailerResponse" type="tns:updateRetailerResponse" />
+<xs:complexType name="updateArea">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:areaVO" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="areaVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="areaCode" type="xs:string" />
+      <xs:element minOccurs="0" name="areaID" type="xs:long" />
+      <xs:element minOccurs="0" name="areaName" type="xs:string" />
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="retailerList" nillable="true" type="tns:retailerVO" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="retailerVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="areaVO" type="tns:areaVO" />
+      <xs:element minOccurs="0" name="isActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="retailerID" type="xs:long" />
+      <xs:element minOccurs="0" name="retailerName" type="xs:string" />
+      <xs:element minOccurs="0" name="shopAddress" type="xs:string" />
+      <xs:element minOccurs="0" name="shopName" type="xs:string" />
+      <xs:element minOccurs="0" name="shopPhoneNumber" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="updateAreaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="resp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="respCode" type="tns:respCode" />
+      <xs:element minOccurs="0" name="respMsg" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getCompanyDetail">
+    <xs:sequence />
+  </xs:complexType>
+<xs:complexType name="getCompanyDetailResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:getCompanyResp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getCompanyResp">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="companyList" nillable="true" type="tns:companyVo" />
+      <xs:element minOccurs="0" name="resp" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="companyVo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="companyAddress" type="xs:string" />
+      <xs:element minOccurs="0" name="companyID" type="xs:long" />
+      <xs:element minOccurs="0" name="companyMobileNo" type="xs:string" />
+      <xs:element minOccurs="0" name="companyName" type="xs:string" />
+      <xs:element minOccurs="0" name="companyPhoneNo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="createEmployee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:employeeMasterVO" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="employeeMasterVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="empID" type="xs:long" />
+      <xs:element minOccurs="0" name="empName" type="xs:string" />
+      <xs:element minOccurs="0" name="isActive" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="createEmployeeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="blockItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="blockItemResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="blockEmployee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="blockEmployeeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="createBillBook">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:billBookVo" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="billBookVo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="billBookId" type="xs:long" />
+      <xs:element minOccurs="0" name="billBookNum" type="xs:string" />
+      <xs:element minOccurs="0" name="endRange" type="xs:string" />
+      <xs:element minOccurs="0" name="startRange" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="createBillBookResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getRetailerDtl">
+    <xs:sequence />
+  </xs:complexType>
+<xs:complexType name="getRetailerDtlResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:getRetailerResp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getRetailerResp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="resp" type="tns:resp" />
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="retailerlist" nillable="true" type="tns:retailerVO" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="createArea">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:areaVO" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="createAreaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="updateEmployee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:employeeMasterVO" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="updateEmployeeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="blockRetailer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="blockRetailerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="updateRetailer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:retailerVO" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="updateRetailerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="createRetailer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:retailerVO" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="createRetailerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="createItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:itemMasterVO" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="itemMasterVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="itemCode" type="xs:string" />
+      <xs:element minOccurs="0" name="itemId" type="xs:long" />
+      <xs:element minOccurs="0" name="itemName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="createItemResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAreaMasterDtl">
+    <xs:sequence />
+  </xs:complexType>
+<xs:complexType name="getAreaMasterDtlResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:getAreaDtlResp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAreaDtlResp">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="list" nillable="true" type="tns:areaVO" />
+      <xs:element minOccurs="0" name="resp" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="updateBillbook">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:billBookVo" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="updateBillbookResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="updateItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:itemMasterVO" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="updateItemResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAllPaymentModes">
+    <xs:sequence />
+  </xs:complexType>
+<xs:complexType name="getAllPaymentModesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:getPaymentModeResp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getPaymentModeResp">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="paymentModeList" nillable="true" type="tns:paymentModeVo" />
+      <xs:element minOccurs="0" name="resp" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="paymentModeVo">
+    <xs:sequence>
+      <xs:element name="paymentModeId" type="xs:int" />
+      <xs:element minOccurs="0" name="paymentModeName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAllItemMasterDtl">
+    <xs:sequence />
+  </xs:complexType>
+<xs:complexType name="getAllItemMasterDtlResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:getItemMasterResp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getItemMasterResp">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="list" nillable="true" type="tns:itemMasterVO" />
+      <xs:element minOccurs="0" name="resp" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAllEmployee">
+    <xs:sequence />
+  </xs:complexType>
+<xs:complexType name="getAllEmployeeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:getEmployeeMasterResp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getEmployeeMasterResp">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="employeeList" nillable="true" type="tns:employeeMasterVO" />
+      <xs:element minOccurs="0" name="resp" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAllBillBookdtl">
+    <xs:sequence />
+  </xs:complexType>
+<xs:complexType name="getAllBillBookdtlResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:getAllBillBookDtlResp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAllBillBookDtlResp">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="billBookList" nillable="true" type="tns:billBookVo" />
+      <xs:element minOccurs="0" name="resp" type="tns:resp" />
+    </xs:sequence>
+  </xs:complexType>
+<xs:simpleType name="respCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESS" />
+      <xs:enumeration value="FAIL" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getAllEmployee">
+    <wsdl:part element="ns1:getAllEmployee" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllItemMasterDtlResponse">
+    <wsdl:part element="ns1:getAllItemMasterDtlResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllBillBookdtlResponse">
+    <wsdl:part element="ns1:getAllBillBookdtlResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAreaMasterDtl">
+    <wsdl:part element="ns1:getAreaMasterDtl" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateBillbook">
+    <wsdl:part element="ns1:updateBillbook" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateAreaResponse">
+    <wsdl:part element="ns1:updateAreaResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAreaMasterDtlResponse">
+    <wsdl:part element="ns1:getAreaMasterDtlResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRetailerDtlResponse">
+    <wsdl:part element="ns1:getRetailerDtlResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createEmployee">
+    <wsdl:part element="ns1:createEmployee" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="blockItemResponse">
+    <wsdl:part element="ns1:blockItemResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createBillBook">
+    <wsdl:part element="ns1:createBillBook" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="blockRetailer">
+    <wsdl:part element="ns1:blockRetailer" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createRetailer">
+    <wsdl:part element="ns1:createRetailer" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createAreaResponse">
+    <wsdl:part element="ns1:createAreaResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateEmployee">
+    <wsdl:part element="ns1:updateEmployee" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="blockEmployeeResponse">
+    <wsdl:part element="ns1:blockEmployeeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createEmployeeResponse">
+    <wsdl:part element="ns1:createEmployeeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateRetailerResponse">
+    <wsdl:part element="ns1:updateRetailerResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateItem">
+    <wsdl:part element="ns1:updateItem" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllBillBookdtl">
+    <wsdl:part element="ns1:getAllBillBookdtl" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateBillbookResponse">
+    <wsdl:part element="ns1:updateBillbookResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateEmployeeResponse">
+    <wsdl:part element="ns1:updateEmployeeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createItem">
+    <wsdl:part element="ns1:createItem" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createItemResponse">
+    <wsdl:part element="ns1:createItemResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="blockEmployee">
+    <wsdl:part element="ns1:blockEmployee" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCompanyDetailResponse">
+    <wsdl:part element="ns1:getCompanyDetailResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createBillBookResponse">
+    <wsdl:part element="ns1:createBillBookResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createRetailerResponse">
+    <wsdl:part element="ns1:createRetailerResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRetailerDtl">
+    <wsdl:part element="ns1:getRetailerDtl" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createArea">
+    <wsdl:part element="ns1:createArea" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllPaymentModes">
+    <wsdl:part element="ns1:getAllPaymentModes" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllPaymentModesResponse">
+    <wsdl:part element="ns1:getAllPaymentModesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="blockRetailerResponse">
+    <wsdl:part element="ns1:blockRetailerResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllItemMasterDtl">
+    <wsdl:part element="ns1:getAllItemMasterDtl" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateItemResponse">
+    <wsdl:part element="ns1:updateItemResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllEmployeeResponse">
+    <wsdl:part element="ns1:getAllEmployeeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateRetailer">
+    <wsdl:part element="ns1:updateRetailer" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="blockItem">
+    <wsdl:part element="ns1:blockItem" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCompanyDetail">
+    <wsdl:part element="ns1:getCompanyDetail" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateArea">
+    <wsdl:part element="ns1:updateArea" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="MasterService">
+    <wsdl:operation name="updateArea">
+      <wsdl:input message="ns1:updateArea" name="updateArea">
+    </wsdl:input>
+      <wsdl:output message="ns1:updateAreaResponse" name="updateAreaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCompanyDetail">
+      <wsdl:input message="ns1:getCompanyDetail" name="getCompanyDetail">
+    </wsdl:input>
+      <wsdl:output message="ns1:getCompanyDetailResponse" name="getCompanyDetailResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createEmployee">
+      <wsdl:input message="ns1:createEmployee" name="createEmployee">
+    </wsdl:input>
+      <wsdl:output message="ns1:createEmployeeResponse" name="createEmployeeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="blockItem">
+      <wsdl:input message="ns1:blockItem" name="blockItem">
+    </wsdl:input>
+      <wsdl:output message="ns1:blockItemResponse" name="blockItemResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="blockEmployee">
+      <wsdl:input message="ns1:blockEmployee" name="blockEmployee">
+    </wsdl:input>
+      <wsdl:output message="ns1:blockEmployeeResponse" name="blockEmployeeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createBillBook">
+      <wsdl:input message="ns1:createBillBook" name="createBillBook">
+    </wsdl:input>
+      <wsdl:output message="ns1:createBillBookResponse" name="createBillBookResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRetailerDtl">
+      <wsdl:input message="ns1:getRetailerDtl" name="getRetailerDtl">
+    </wsdl:input>
+      <wsdl:output message="ns1:getRetailerDtlResponse" name="getRetailerDtlResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createArea">
+      <wsdl:input message="ns1:createArea" name="createArea">
+    </wsdl:input>
+      <wsdl:output message="ns1:createAreaResponse" name="createAreaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEmployee">
+      <wsdl:input message="ns1:updateEmployee" name="updateEmployee">
+    </wsdl:input>
+      <wsdl:output message="ns1:updateEmployeeResponse" name="updateEmployeeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="blockRetailer">
+      <wsdl:input message="ns1:blockRetailer" name="blockRetailer">
+    </wsdl:input>
+      <wsdl:output message="ns1:blockRetailerResponse" name="blockRetailerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRetailer">
+      <wsdl:input message="ns1:updateRetailer" name="updateRetailer">
+    </wsdl:input>
+      <wsdl:output message="ns1:updateRetailerResponse" name="updateRetailerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRetailer">
+      <wsdl:input message="ns1:createRetailer" name="createRetailer">
+    </wsdl:input>
+      <wsdl:output message="ns1:createRetailerResponse" name="createRetailerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createItem">
+      <wsdl:input message="ns1:createItem" name="createItem">
+    </wsdl:input>
+      <wsdl:output message="ns1:createItemResponse" name="createItemResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAreaMasterDtl">
+      <wsdl:input message="ns1:getAreaMasterDtl" name="getAreaMasterDtl">
+    </wsdl:input>
+      <wsdl:output message="ns1:getAreaMasterDtlResponse" name="getAreaMasterDtlResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBillbook">
+      <wsdl:input message="ns1:updateBillbook" name="updateBillbook">
+    </wsdl:input>
+      <wsdl:output message="ns1:updateBillbookResponse" name="updateBillbookResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateItem">
+      <wsdl:input message="ns1:updateItem" name="updateItem">
+    </wsdl:input>
+      <wsdl:output message="ns1:updateItemResponse" name="updateItemResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPaymentModes">
+      <wsdl:input message="ns1:getAllPaymentModes" name="getAllPaymentModes">
+    </wsdl:input>
+      <wsdl:output message="ns1:getAllPaymentModesResponse" name="getAllPaymentModesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllItemMasterDtl">
+      <wsdl:input message="ns1:getAllItemMasterDtl" name="getAllItemMasterDtl">
+    </wsdl:input>
+      <wsdl:output message="ns1:getAllItemMasterDtlResponse" name="getAllItemMasterDtlResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllEmployee">
+      <wsdl:input message="ns1:getAllEmployee" name="getAllEmployee">
+    </wsdl:input>
+      <wsdl:output message="ns1:getAllEmployeeResponse" name="getAllEmployeeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllBillBookdtl">
+      <wsdl:input message="ns1:getAllBillBookdtl" name="getAllBillBookdtl">
+    </wsdl:input>
+      <wsdl:output message="ns1:getAllBillBookdtlResponse" name="getAllBillBookdtlResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
